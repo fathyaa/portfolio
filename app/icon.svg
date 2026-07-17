@@ -1,0 +1,21 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="24" fill="#141413"/>
+  <!-- Serif "F": stem, two arms, slab serifs -->
+  <g fill="#f2f2ef">
+    <!-- stem -->
+    <rect x="41" y="26" width="9" height="44"/>
+    <!-- top arm -->
+    <rect x="41" y="26" width="31" height="9"/>
+    <!-- middle arm -->
+    <rect x="41" y="45" width="24" height="8"/>
+    <!-- serif feet -->
+    <rect x="34" y="66" width="23" height="4"/>
+    <!-- top-left serif nub -->
+    <rect x="35" y="26" width="6" height="4"/>
+    <!-- arm-end serifs -->
+    <rect x="68" y="26" width="4" height="13"/>
+    <rect x="61" y="45" width="4" height="11"/>
+  </g>
+  <!-- accent selection-highlight mark under the F -->
+  <rect x="34" y="74" width="27" height="5" rx="2.5" fill="#3056d3"/>
+</svg>

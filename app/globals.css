@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #ffffff;
+  --ink: #141413;
+  --muted: #6f6f6a;
+  --faint: #a3a39c;
+  --line: rgba(20, 20, 19, 0.08);
+  --card: #ffffff;
+  --accent: #3056d3;
+  --accent-ink: #2447b8;
+  --selection: rgba(48, 86, 211, 0.14);
+  --selection-strong: rgba(48, 86, 211, 0.22);
+}
+
+.dark {
+  --paper: #0e0e0d;
+  --ink: #f2f2ef;
+  --muted: #8f8f88;
+  --faint: #62625c;
+  --line: rgba(242, 242, 239, 0.1);
+  --card: #171716;
+  --accent: #7b97f0;
+  --accent-ink: #93aaf3;
+  --selection: rgba(123, 151, 240, 0.18);
+  --selection-strong: rgba(123, 151, 240, 0.3);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--selection-strong);
+  color: var(--ink);
+}
+
+/* Hairline borders that read as drawn, not boxed */
+.hairline-t {
+  border-top: 1px solid var(--line);
+}
+.hairline-b {
+  border-bottom: 1px solid var(--line);
+}
+
+/* Editorial serif accent — italic words inside headlines */
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* The selection-highlight motif */
+.text-highlight {
+  background: var(--selection);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
